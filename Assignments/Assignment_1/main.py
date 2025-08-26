@@ -6,11 +6,7 @@
 #OtherPerson == 1
 #if two emails are from the same sender, prioritize the one that was sent first
 
-#To do next:
-#figure out how to compare/extract dates
-#make sure the __lt__ magic method works
-#Add test files and debug
-
+##fix dates not comparing correctly
 
 from maxheap import MaxHeap
 from email import Email
@@ -23,11 +19,9 @@ def main():
     with open(user_file, 'r') as file: #opens the file and extracts each piece of information 
         for line in file:
             line = line.strip()
-            
             if line.startswith("EMAIL"):
                 temp = line.split(' ', 1)[1]
                 data = temp.split(",")
-
                 sender_category = data[0]
                 subject_line = data[1]
                 date = data[2]

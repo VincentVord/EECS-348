@@ -2,25 +2,30 @@ class Email:
     def __init__(self, sender_category, subject_line, date):
         self.subject_line = subject_line
         self.date = date
+
+        m, d, y = date.split("-") #got this syntax from chatgpt to easily reformat the date
+        self.formatted_date = y + m + d # for comparing dates easily 
+
         self.sender_category = sender_category
         
         if self.sender_category == "Boss": #categorize each sender by number to easily compare
-            self.sender_category == 5
+            self.priority_number = 5
         elif self.sender_category == "Subordinate":
-            self.sender_category == 4
+            self.priority_number = 4
         elif self.sender_category == "Peer":
-            self.sender_category == 3
+            self.priority_number = 3
         elif self.sender_category == "ImportantPerson":
-            self.sender_category == 2
+            self.priority_number = 2
         elif self.sender_category == "OtherPerson":
-            self.sender_category == 1
+            self.priority_number = 1
     
     def __lt__(self,other):
-        if self.sender_category != other.sender_category: 
-            return self.sender_category < other.sender_category #prioritize by sender category
-        return self.date < other.date #if the sender is the same prioritize by earliest date
+        if self.priority_number != other.priority_number: 
+            return self.priority_number < other.priority_number #prioritize by lowest priority_number
+        else:
+            return self.formatted_date > other.formatted_date #if the sender is the same prioritize by earliest date
     
     def __str__(self): #prints the email information in a well-formatted manor
-        return (f"Sender: {self.sender_category}\n"
-                f"Subject: {self.subject_line}\n"
-                f"Date: {self.date}\n")
+        return (f"\tSender: {self.sender_category}\n"
+                f"\tSubject: {self.subject_line}\n"
+                f"\tDate: {self.date}\n")
