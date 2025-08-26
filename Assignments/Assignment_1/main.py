@@ -18,17 +18,19 @@ from email import Email
 PriorityQueue = MaxHeap()
 
 def main():
-    user_file = input("Enter the name of your email file: ")
+    user_file = 'Assignment1_Test_File.txt'
 
-    with open(user_file, 'r', encoding="utf8") as file: #opens the file and extracts each piece of information 
+    with open(user_file, 'r') as file: #opens the file and extracts each piece of information 
         for line in file:
             line = line.strip()
+            
             if line.startswith("EMAIL"):
-                data = line.split()
-                command = data[0]
-                sender_category = data[1]
-                subject_line = data[2]
-                date = data[3]
+                temp = line.split(' ', 1)[1]
+                data = temp.split(",")
+
+                sender_category = data[0]
+                subject_line = data[1]
+                date = data[2]
                 email = Email(sender_category, subject_line,date) #create instance of an email
                 PriorityQueue.add(email)
             elif line == "COUNT":

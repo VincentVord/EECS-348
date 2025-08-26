@@ -2,7 +2,8 @@ class Email:
     def __init__(self, sender_category, subject_line, date):
         self.subject_line = subject_line
         self.date = date
-
+        self.sender_category = sender_category
+        
         if self.sender_category == "Boss": #categorize each sender by number to easily compare
             self.sender_category == 5
         elif self.sender_category == "Subordinate":
@@ -13,7 +14,6 @@ class Email:
             self.sender_category == 2
         elif self.sender_category == "OtherPerson":
             self.sender_category == 1
-        self.sender_category = sender_category
     
     def __lt__(self,other):
         if self.sender_category != other.sender_category: 
