@@ -1,0 +1,22 @@
+EMAIL Boss,Meeting at 9AM,12-15-2024
+EMAIL Peer,Study session tonight?,12-10-2024
+EMAIL OtherPerson,Win a free cruise!,12-20-2024
+EMAIL ImportantPerson,Conference RSVP,12-05-2024
+EMAIL Subordinate,Finished my report,12-12-2024
+EMAIL Boss,Project deadline moved,12-01-2025
+EMAIL Subordinate,Need clarification,11-30-2024
+EMAIL Peer,Group project update,12-22-2024
+EMAIL OtherPerson,Discount code inside,12-18-2024
+COUNT
+NEXT
+READ
+NEXT
+READ
+COUNT
+READ
+READ
+READ
+READ
+READ
+NEXT
+COUNT

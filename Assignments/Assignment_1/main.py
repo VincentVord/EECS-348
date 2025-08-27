@@ -11,7 +11,7 @@
 from maxheap import MaxHeap
 from email import Email
 
-PriorityQueue = MaxHeap()
+PriorityQueue = MaxHeap() #create instance of a MaxHeap
 
 def main():
     user_file = 'Assignment1_Test_File.txt'
@@ -27,6 +27,11 @@ def main():
                 date = data[2]
                 email = Email(sender_category, subject_line,date) #create instance of an email
                 PriorityQueue.add(email)
+
+                print(data)
+                print (email.priority_number)
+                print(PriorityQueue._heap)
+
             elif line == "COUNT":
                 print(f"There are {PriorityQueue.count()} emails to read.\n") #prints the amount of emails unread
             elif line == "NEXT":

@@ -1,6 +1,6 @@
 class MaxHeap: #maxheap class from EECS 268
     def __init__(self):
-        self._heap = [] #empy list for a list based implementation
+        self._heap = [] #empty list for a list based implementation
     
     def count(self):
         return len(self._heap)
@@ -31,8 +31,8 @@ class MaxHeap: #maxheap class from EECS 268
         child_index = 2 * index + 1
         if child_index >= len(self._heap):
             return
-        elif child_index + 1 < len(self._heap) and self._heap[child_index] < self._heap[child_index + 1]: # Choose the larger child to swap with
+        if child_index + 1 < len(self._heap) and self._heap[child_index] < self._heap[child_index + 1]: # Choose the larger child to swap with
             child_index += 1
-        elif self._heap[index] < self._heap[child_index]: # Now use this child's index to swap and continue downheap
+        if self._heap[index] < self._heap[child_index]: # Now use this child's index to swap and continue downheap
             self._heap[index], self._heap[child_index] = self._heap[child_index], self._heap[index]
             self._downheap(child_index)

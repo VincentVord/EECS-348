@@ -4,7 +4,7 @@ class Email:
         self.date = date
 
         m, d, y = date.split("-") #got this syntax from chatgpt to easily reformat the date
-        self.formatted_date = y + m + d # for comparing dates easily 
+        self.formatted_date = y + m + d # for comparing dates easily (YYYYMMDD)
 
         self.sender_category = sender_category
         
@@ -23,7 +23,7 @@ class Email:
         if self.priority_number != other.priority_number: 
             return self.priority_number < other.priority_number #prioritize by lowest priority_number
         else:
-            return self.formatted_date > other.formatted_date #if the sender is the same prioritize by earliest date
+            return self.formatted_date < other.formatted_date #if the sender is the same prioritize by most recent date
     
     def __str__(self): #prints the email information in a well-formatted manor
         return (f"\tSender: {self.sender_category}\n"
