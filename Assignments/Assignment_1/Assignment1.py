@@ -1,3 +1,13 @@
+#EECS 348 Assignment 1
+#Email Priority queue using a Maxheap with a list-based implementation
+#Inputs: test file labeled Assignment1_Test_File.txt
+#Output: Next email and number of unread emails
+#Collaborators: None
+#EECS 268 material, StackOverflow, ChatGPT
+#Vincent Vordtriede
+#8/26/2025
+
+
 class MaxHeap: #my maxheap class from EECS 268
     def __init__(self): #initializes the maxheap class
         self._heap = [] #empty list for a list based implementation
@@ -88,7 +98,7 @@ def main(): #defines the main function
                 sender_category = data[0] #the first index is defined as the sender
                 subject_line = data[1] #the second index is defined as the subject
                 date = data[2] #the third index is defined as the date
-                
+
                 email = Email(sender_category, subject_line,date) #create instance of an email using the extracted data
                 PriorityQueue.add(email) #add the email to the priority queue
 
