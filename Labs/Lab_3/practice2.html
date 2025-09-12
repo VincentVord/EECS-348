@@ -1,0 +1,59 @@
+<DOCTYPE HTML>
+    <html>
+        <head>
+        <title>EECS 348 Lab 3 Practice 2</title>
+        </head>
+        <Body>
+            <h1> EECS 348 Lab 3 Practice 2 </h1>
+            <style>
+                #para {
+                    border-color: black;
+                    border-style: solid;
+                    border-width: thick;
+                    width: auto;
+                }
+            </style>
+            <p id ="para"> Paragraph to be altered. </p>
+            <p> Border R(0-255): </p>
+            <input type="text" id = "border_R" value>
+            <br>
+            <p> Border G(0-255): </p>
+            <input type="text" id = "border_G" value>
+            <br>
+            <p> Border B(0-255): </p>
+            <input type="text" id = "border_B" value>
+            <br>
+            <p> Border width: </p>
+            <input type="text" id = "border_width" value>
+            <br>
+            <p> Background R(0-255): </p>
+            <input type="text" id = "background_R" value>
+            <br>
+            <p> Background G(0-255): </p>
+            <input type="text" id = "background_G" value>
+            <br>
+            <p> Background B(0-255): </p>
+            <input type="text" id = "background_B" value>
+            <br>
+            <button onclick= "alter_para()">Change the color! </button>
+            <br>
+        </Body>
+        <script>
+
+            function alter_para() {
+                var border_R = document.getElementById("border_R").value
+                var border_G = document.getElementById("border_G").value
+                var border_B = document.getElementById("border_B").value
+                var border_width = document.getElementById("border_width").value
+                var background_R = document.getElementById("background_R").value
+                var background_G = document.getElementById("background_G").value
+                var background_B = document.getElementById("background_B").value
+                var paragraph = document.getElementById("para");
+                paragraph.style.borderColor = `rgb(${border_R},${border_G},${border_B})`;
+                paragraph.style.borderWidth = border_width
+                paragraph.style.backgroundColor = `rgb(${background_R},${background_G},${background_B})`;
+            }
+
+        </script>
+    </html>
+</DOCTYPE>

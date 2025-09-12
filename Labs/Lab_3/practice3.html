@@ -1,0 +1,32 @@
+<DOCTYPE HTML>
+<html>
+    <head>
+        <title>EECS 348 Lab 3 Practice 3</title>  
+    </head>
+    <body>
+       <h1> EECS 348 Lab 3 Practice 3 </h1> 
+       <p> First Password: </p>
+       <input type="text" id="p1" value=""> <br>
+       <p> Second Password: </p>
+       <input type="text" id="p2" value=""> <br>
+       <button onclick = "check()"> Validate your passwords </button> <br>
+       <script>
+
+        function check() {
+            var p1 = document.getElementById("p1").value
+            var p2 = document.getElementById("p2").value
+
+            if (p1.length < 8) {
+                alert("Password 1 is less than 8 characters! ")
+            } else if (p2.length < 8) { 
+                alert("Password 2 is less than 8 characters")
+            } else if (p1 != p2) {
+                alert("Passwords do not match! ")
+            } else {
+                alert("Passwords match!")
+            }
+        }
+
+       </script>
+    </body>
+</html>
